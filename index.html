@@ -65,8 +65,8 @@ canvas{width:100%;height:150px;border:1.5px dashed var(--navy);border-radius:8px
 .btn{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:8px;padding:0 16px;min-height:44px;cursor:pointer;font-weight:600}
 .tz2{width:100%;border-collapse:collapse;font-size:.92rem}.tz2 th,.tz2 td{border-bottom:1px solid var(--line);padding:8px;text-align:right;white-space:nowrap}.tz2 th{color:var(--mut)}.tz2 .ck{width:20px;min-height:20px}
 @media print{#adm{display:none!important}#pa{display:block}#pa .pw{page-break-after:always}#pa .pw:last-child{page-break-after:auto}}
-@page{size:A4;margin:10mm}
-@media print{header,.bar,.stepname,.nav,.noprint,.note{display:none!important}body{background:#fff}main{padding:0;max-width:none}.card{border:0;padding:0;background:#fff}.pw{overflow:visible}.paper{border:0;padding:0;margin:0;min-width:0}}
+@page{size:A4;margin:8mm}
+@media print{header,.bar,.stepname,.nav,.noprint,.note{display:none!important}body{background:#fff}main{padding:0;max-width:none}.card{border:0;padding:0;background:#fff}.pw{overflow:visible}.paper{border:0;padding:0;margin:0;min-width:0;font-size:12.5px}.row{margin:5px 0}.sh{margin:8px 0 3px}.lgi{height:80px}.ph{margin-bottom:6px}.ph .bx{height:110px}.tz td,.tz th{height:24px;padding:3px}.paper .r i{font-size:1rem;line-height:1.25;min-height:1.3em}.paper .pg{page-break-after:auto}.row{gap:8px}.ids span{height:26px;line-height:24px}.paper p{margin:4px 0;line-height:1.6!important}.ft{margin-top:8px}}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
@@ -239,8 +239,9 @@ function paper(){
  <div class="row" style="justify-content:space-between;margin-top:14px"><b>التوقيع<br>أمين القسم / مركز<br>....................</b><b>يعتمد<br>أمين المحافظة<br>....................</b></div>
  <div class="sh" style="text-align:center">بيانات سداد رسوم العضوية وإستخراج بطاقة العضوية<br><small>( تملأ بمعرفة الحزب )</small></div>
  ${R(L("- قيمة الرسوم المسددة",""),L("السنوات المسددة عنها",""))}${R(L("- إيصال سداد رسوم العضوية رقم",""),L("بتاريخ",""))}${R(L("- قيمة سداد رسوم إستخراج بطاقة العضوية",""))}${R(L("- ايصال سداد رسوم إستخراج بطاقة العضوية رقم",""),L("بتاريخ",""))}
- <div class="ft">فيلا ٣٥٢ شارع التسعين الشمالي – جنوب الاكاديمية أ – القاهرة الجديدة &nbsp; تليفون : ٢٥٣٧٥٣٧٨ (+٢٠٢) &nbsp; فاكس : ٢٥٣٧٥٣٧٩ (+٢٠٢)</div></div>`;
- const p3=FILES.idimg?`<div class="pg"><div class="sh">صورة بطاقة الرقم القومي</div><img src="${FILES.idimg}" alt="" style="max-width:100%;max-height:420px;border:1px solid #000"></div>`:"";
+ ${FILES.idimg?`<div class="sh">صورة بطاقة الرقم القومي</div><img src="${FILES.idimg}" alt="" style="max-width:100%;max-height:150px;border:1px solid #000">`:""}
+  <div class="ft">فيلا ٣٥٢ شارع التسعين الشمالي – جنوب الاكاديمية أ – القاهرة الجديدة &nbsp; تليفون : ٢٥٣٧٥٣٧٨ (+٢٠٢) &nbsp; فاكس : ٢٥٣٧٥٣٧٩ (+٢٠٢)</div></div>`;
+ const p3="";
  return `<div class="pw"><div class="paper">${p1}${p2}${p3}</div></div>`;
 }
 let cv,cx;
